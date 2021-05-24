@@ -1,0 +1,1 @@
+These examples were written while going through the Udacity course "Deep Learning With Pytorch" https://www.udacity.com/course/deep-learning-pytorch--ud188 
