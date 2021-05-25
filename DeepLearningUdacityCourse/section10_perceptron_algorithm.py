@@ -24,7 +24,7 @@ def perceptronStep(X, y, W, b, learn_rate = 0.01):
             W[0] += X[i][0]*learn_rate
             W[1] += X[i][1]*learn_rate
             b += learn_rate
-        elif y[i]-y_hat == -1:
+        elif y[i]-y_hat == 0:
             W[0] -= X[i][0]*learn_rate
             W[1] -= X[i][1]*learn_rate
             b -= learn_rate*W[0] + X[i][1] * W[1] + b
@@ -48,5 +48,15 @@ def trainPerceptronAlgorithm(X, y, learn_rate = 0.01, num_epochs = 100):
         boundary_lines.append((-W[0]/W[1], -b/W[1]))
     return boundary_lines
 
+# added the following to try and plo the plot they have on the website
 data_frame = pd.read_csv('data.csv')
-print(data_frame.to_string())
+data_frame.columns = ['0','1','2']
+X = data_frame.drop(columns = '2', inplace = False)
+X = X.to_numpy()
+y = data_frame[['2']]
+y = y.to_numpy()
+
+lines = trainPerceptronAlgorithm(X, y)
+print(lines[0][1])
+
+# Try to plot this using MatPlotLib
