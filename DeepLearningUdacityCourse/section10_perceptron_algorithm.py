@@ -49,7 +49,7 @@ def trainPerceptronAlgorithm(X, y, learn_rate = 0.01, num_epochs = 100):
     return boundary_lines
 
 # added the following to try and plo the plot they have on the website
-data_frame = pd.read_csv('data.csv')
+data_frame = pd.read_csv('section10_data.csv')
 data_frame.columns = ['0','1','2']
 X = data_frame.drop(columns = '2', inplace = False)
 X = X.to_numpy()

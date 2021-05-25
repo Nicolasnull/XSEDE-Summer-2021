@@ -1,4 +1,5 @@
 # The goal is to find the entropy of a given set using a list of actual results (Y) and the list of probabilities (P)
+# Keep in mind, a higher cross entropy means a lower chance of the event actually happening
 import numpy as np
 
 # Write a function that takes as input two lists Y, P,
